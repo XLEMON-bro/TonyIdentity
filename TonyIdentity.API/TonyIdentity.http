@@ -1,0 +1,4 @@
+@TonyIdentity.API_HostAddress = https://localhost:5001
+
+### Health
+GET {{TonyIdentity.API_HostAddress}}/health
