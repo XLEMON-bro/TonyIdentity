@@ -56,7 +56,7 @@ public class AuthController : ControllerBase
 
     [EnableRateLimiting("login")]
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginRequest request, CancellationToken cancellationToken)
+    public async Task<IActionResult> Login([FromBody] Contracts.Requests.LoginRequest request, CancellationToken cancellationToken)
     {
         var result = await _authService.LoginAsync(new TonyIdentity.Business.Models.LoginRequest
         {
