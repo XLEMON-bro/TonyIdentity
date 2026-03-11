@@ -17,8 +17,17 @@ namespace TonyIdentity.Database.Configurations
 
             builder.Property(x => x.BlockedReason).HasMaxLength(512);
 
-            builder.HasIndex(x => x.CreatedAtUtc);
             builder.HasIndex(X => X.IsBlocked);
+
+            builder.HasMany(x => x.RefreshSessions)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasMany(x => x.TwoFactorChallenges)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

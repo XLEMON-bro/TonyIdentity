@@ -14,8 +14,7 @@
         public DateTime UpdatedAtUtc { get; set; }
         public DateTime? RevokedAtUtc { get; set; }
 
-        public string? UserAgent { get; set; }
         public string? IpAddress { get; set; }
-        public string? DeviceName { get; set; }
+        public string? UserAgent { get; set; }
     }
 }

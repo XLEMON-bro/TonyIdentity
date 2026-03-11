@@ -13,5 +13,9 @@ namespace TonyIdentity.Database.Entities
         public DateTime? BlockedAtUtc { get; set; }
         public string? BlockedReason { get; set; }
         public DateTime CreatedAtUtc { get; set; }
+
+        public ICollection<RefreshSessionEntity> RefreshSessions { get; set; } = new List<RefreshSessionEntity>();
+        public ICollection<TwoFactorChallengeEntity> TwoFactorChallenges { get; set; } = new List<TwoFactorChallengeEntity>();
+
     }
 }
