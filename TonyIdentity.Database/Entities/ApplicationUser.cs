@@ -10,16 +10,8 @@ namespace TonyIdentity.Database.Entities
     public class ApplicationUser : IdentityUser<Guid>
     {
         public bool IsBlocked { get;set; }
-        public DateTime? BlockedAt { get; set; }
+        public DateTime? BlockedAtUtc { get; set; }
         public string? BlockedReason { get; set; }
         public DateTime CreatedAtUtc { get; set; }
-        public DateTime? LastLoginAtUtc { get; set; }
-
-        public ICollection<RefreshTokenEntity> RefreshTokens { get; set; }
-
-        public ApplicationUser() 
-        {
-            RefreshTokens = new List<RefreshTokenEntity>();
-        }
     }
 }
